@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.OleDb;
+﻿using System.Data.OleDb;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
@@ -70,7 +65,7 @@ namespace CapaDatos
 
         public DataTable ObtenerUsuarios()
         {
-            string sSql = "SELECT ID, Nombre, Apellido, Correo, Contraseña FROM Datos";
+            string sSql = "SELECT ID, Nombre, Apellido, Correo, Contraseña, Rol FROM Datos ORDER BY ID ASC";
             OleDbDataAdapter adapter = new OleDbDataAdapter(sSql,conexion.AbrirConexion());
 
             DataTable dt = new DataTable();
@@ -87,6 +82,24 @@ namespace CapaDatos
             using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
             {
                 cmd.Parameters.AddWithValue("@ID", idUsuario);
+                cmd.ExecuteNonQuery();
+            }
+            conexion.CerrarConexion();
+        }
+
+        public void AcutualizarUsuario(int idUsuario, string nombre, string apellido, string correo, string contrasena, string rol)
+        {
+            string sSql = "UPDATE Datos SET Nombre = @Nombre, Apellido = @Apellido, Correo = @Correo, Contraseña = @Contrasena, ConfirmContraseña = @Contrasena, Rol = @Rol WHERE ID = @ID";
+
+            using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+            {
+                cmd.Parameters.AddWithValue("@Nombre", nombre);
+                cmd.Parameters.AddWithValue("@Apellido", apellido);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+                cmd.Parameters.AddWithValue("@Contrasena", contrasena);
+                cmd.Parameters.AddWithValue("@Rol", rol);
+                cmd.Parameters.AddWithValue("@ID", idUsuario);
+
                 cmd.ExecuteNonQuery();
             }
             conexion.CerrarConexion();

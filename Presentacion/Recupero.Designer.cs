@@ -145,7 +145,7 @@
             this.Controls.Add(this.lblIngreseCorreo);
             this.Controls.Add(this.txtCorreoR);
             this.Name = "Recupero";
-            this.Text = "Form2";
+            this.Text = "Registro";
             this.ResumeLayout(false);
             this.PerformLayout();
 

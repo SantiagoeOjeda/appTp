@@ -149,7 +149,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnRegistrarse);
             this.Name = "Registro";
-            this.Text = "Form1";
+            this.Text = "Registro";
             this.ResumeLayout(false);
             this.PerformLayout();
 

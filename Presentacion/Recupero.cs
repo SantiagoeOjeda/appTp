@@ -45,6 +45,8 @@ namespace Presentacion
             if (usuarios.CambiarContrasena(correo, codigo, nuevaContrasena))
             {
                 MessageBox.Show("Contraseña cambiada correctamente.");
+                Login login = new Login();
+                login.Show();
                 this.Close();
             }
             else

@@ -1,10 +1,5 @@
 ﻿using CapaDatos;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
@@ -79,6 +74,11 @@ namespace CapaNegocio
         public void EliminarUsuario(string idUsuario)
         {
             admin.ElimiinarUsuario(idUsuario);
+        }
+
+        public void ActualizarUsuario(int idUsuario, string nombre, string apellido, string correo, string contrasena, string rol)
+        {
+            admin.AcutualizarUsuario(idUsuario, nombre, apellido, correo, contrasena, rol);
         }
 
     }

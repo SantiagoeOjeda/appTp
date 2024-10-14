@@ -114,7 +114,7 @@
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.btnIngresar);
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
