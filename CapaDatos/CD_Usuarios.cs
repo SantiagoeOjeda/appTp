@@ -6,7 +6,6 @@ namespace CapaDatos
     public class CD_Usuarios
     {
         CD_Conexion conexion = new CD_Conexion();
-        OleDbDataReader DR;
         DataTable DT = new DataTable();
         OleDbCommand comando = new OleDbCommand();
 

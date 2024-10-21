@@ -67,9 +67,9 @@ namespace Presentacion
             {
                 DataGridViewRow row = dgvUsuarios.SelectedRows[0];
                 txtNombreA.Text = row.Cells["Nombre"].Value.ToString();
-                txtCorreoA.Text = row.Cells["Apellido"].Value.ToString();
-                txtContraseñaA.Text = row.Cells["Correo"].Value.ToString();
-                txtApellidoA.Text = row.Cells["Contraseña"].Value.ToString();
+                txtApellidoA.Text = row.Cells["Apellido"].Value.ToString();
+                txtCorreoA.Text = row.Cells["Correo"].Value.ToString();
+                txtContraseñaA.Text = row.Cells["Contraseña"].Value.ToString();
 
 
                 cmbRol.Items.Clear();

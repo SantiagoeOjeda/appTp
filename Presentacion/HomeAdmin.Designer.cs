@@ -32,10 +32,6 @@
             this.chbEdicion = new System.Windows.Forms.CheckBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblUsuarios = new System.Windows.Forms.Label();
-            this.txtNombreA = new System.Windows.Forms.TextBox();
-            this.txtCorreoA = new System.Windows.Forms.TextBox();
-            this.txtContraseñaA = new System.Windows.Forms.TextBox();
-            this.txtApellidoA = new System.Windows.Forms.TextBox();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +39,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.txtNombreA = new System.Windows.Forms.TextBox();
+            this.txtApellidoA = new System.Windows.Forms.TextBox();
+            this.txtCorreoA = new System.Windows.Forms.TextBox();
+            this.txtContraseñaA = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,38 +90,6 @@
             this.lblUsuarios.Size = new System.Drawing.Size(56, 13);
             this.lblUsuarios.TabIndex = 3;
             this.lblUsuarios.Text = "Usuarios";
-            // 
-            // txtNombreA
-            // 
-            this.txtNombreA.Enabled = false;
-            this.txtNombreA.Location = new System.Drawing.Point(27, 57);
-            this.txtNombreA.Name = "txtNombreA";
-            this.txtNombreA.Size = new System.Drawing.Size(100, 20);
-            this.txtNombreA.TabIndex = 4;
-            // 
-            // txtCorreoA
-            // 
-            this.txtCorreoA.Enabled = false;
-            this.txtCorreoA.Location = new System.Drawing.Point(205, 57);
-            this.txtCorreoA.Name = "txtCorreoA";
-            this.txtCorreoA.Size = new System.Drawing.Size(100, 20);
-            this.txtCorreoA.TabIndex = 5;
-            // 
-            // txtContraseñaA
-            // 
-            this.txtContraseñaA.Enabled = false;
-            this.txtContraseñaA.Location = new System.Drawing.Point(205, 100);
-            this.txtContraseñaA.Name = "txtContraseñaA";
-            this.txtContraseñaA.Size = new System.Drawing.Size(100, 20);
-            this.txtContraseñaA.TabIndex = 6;
-            // 
-            // txtApellidoA
-            // 
-            this.txtApellidoA.Enabled = false;
-            this.txtApellidoA.Location = new System.Drawing.Point(27, 101);
-            this.txtApellidoA.Name = "txtApellidoA";
-            this.txtApellidoA.Size = new System.Drawing.Size(100, 20);
-            this.txtApellidoA.TabIndex = 7;
             // 
             // cmbRol
             // 
@@ -187,12 +155,48 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // txtNombreA
+            // 
+            this.txtNombreA.Enabled = false;
+            this.txtNombreA.Location = new System.Drawing.Point(29, 57);
+            this.txtNombreA.Name = "txtNombreA";
+            this.txtNombreA.Size = new System.Drawing.Size(100, 20);
+            this.txtNombreA.TabIndex = 15;
+            // 
+            // txtApellidoA
+            // 
+            this.txtApellidoA.Enabled = false;
+            this.txtApellidoA.Location = new System.Drawing.Point(202, 57);
+            this.txtApellidoA.Name = "txtApellidoA";
+            this.txtApellidoA.Size = new System.Drawing.Size(100, 20);
+            this.txtApellidoA.TabIndex = 16;
+            // 
+            // txtCorreoA
+            // 
+            this.txtCorreoA.Enabled = false;
+            this.txtCorreoA.Location = new System.Drawing.Point(202, 99);
+            this.txtCorreoA.Name = "txtCorreoA";
+            this.txtCorreoA.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreoA.TabIndex = 17;
+            // 
+            // txtContraseñaA
+            // 
+            this.txtContraseñaA.Enabled = false;
+            this.txtContraseñaA.Location = new System.Drawing.Point(29, 100);
+            this.txtContraseñaA.Name = "txtContraseñaA";
+            this.txtContraseñaA.Size = new System.Drawing.Size(100, 20);
+            this.txtContraseñaA.TabIndex = 18;
+            // 
             // HomeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(514, 354);
+            this.Controls.Add(this.txtContraseñaA);
+            this.Controls.Add(this.txtCorreoA);
+            this.Controls.Add(this.txtApellidoA);
+            this.Controls.Add(this.txtNombreA);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -200,10 +204,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.cmbRol);
-            this.Controls.Add(this.txtApellidoA);
-            this.Controls.Add(this.txtContraseñaA);
-            this.Controls.Add(this.txtCorreoA);
-            this.Controls.Add(this.txtNombreA);
             this.Controls.Add(this.lblUsuarios);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.chbEdicion);
@@ -223,10 +223,6 @@
         private System.Windows.Forms.CheckBox chbEdicion;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblUsuarios;
-        private System.Windows.Forms.TextBox txtNombreA;
-        private System.Windows.Forms.TextBox txtCorreoA;
-        private System.Windows.Forms.TextBox txtContraseñaA;
-        private System.Windows.Forms.TextBox txtApellidoA;
         private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label2;
@@ -234,5 +230,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.TextBox txtNombreA;
+        private System.Windows.Forms.TextBox txtApellidoA;
+        private System.Windows.Forms.TextBox txtCorreoA;
+        private System.Windows.Forms.TextBox txtContraseñaA;
     }
 }

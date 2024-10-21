@@ -37,6 +37,9 @@ namespace Presentacion
                 Usuario.RegistrarUsuarios();
 
                 MessageBox.Show("Usuario registrado correctamente");
+                Login login = new Login();
+                login.Show();
+                this.Close();
             }
             catch (Exception ex)
             {
