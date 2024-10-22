@@ -34,7 +34,7 @@ namespace Presentacion
 
         private void HomeUser_Load(object sender, EventArgs e)
         {
-            string correoUsuario = correoLogin; // Este valor podría provenir del formulario de login
+            string correoUsuario = correoLogin; 
 
             Usuario usuario = user.ObtenerUsuarioPorCorreo(correoUsuario);
 

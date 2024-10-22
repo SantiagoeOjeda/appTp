@@ -25,15 +25,6 @@ namespace Presentacion
                     return;
                 }
 
-                if (txtCorreoR.Text == "santi@gmail.com")
-                {
-                    Usuario.Rol = "admin";
-                }
-                else
-                {
-                    Usuario.Rol = "user";
-                }
-
                 PasarDatos();
                 Usuario.RegistrarUsuarios();
 

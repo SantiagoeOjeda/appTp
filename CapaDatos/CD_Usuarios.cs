@@ -80,7 +80,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@Correo", correo);
                 cmd.Parameters.AddWithValue("@Contrasena", contrasena);
                 cmd.Parameters.AddWithValue("@ConfirmContrasena", confirmContrasena);
-                cmd.Parameters.AddWithValue("@Rol", rol);
+                cmd.Parameters.AddWithValue("@Rol", "user");
 
                 // Ejecuta el comando
                 cmd.ExecuteNonQuery();
