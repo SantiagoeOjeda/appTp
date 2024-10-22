@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Recupero));
             this.txtCorreoR = new System.Windows.Forms.TextBox();
             this.lblIngreseCorreo = new System.Windows.Forms.Label();
             this.btnCodigo = new System.Windows.Forms.Button();
@@ -144,6 +145,7 @@
             this.Controls.Add(this.btnCodigo);
             this.Controls.Add(this.lblIngreseCorreo);
             this.Controls.Add(this.txtCorreoR);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Recupero";
             this.Text = "Registro";
             this.ResumeLayout(false);

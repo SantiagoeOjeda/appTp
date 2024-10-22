@@ -1,8 +1,17 @@
 ﻿using System.Data.OleDb;
 using System.Data;
+using System.Windows.Forms;
+using System;
 
 namespace CapaDatos
 {
+    #region Clase usurario
+    public class Usuario
+    {
+        public string Nombre { get; set; }
+        public string Rol { get; set; }
+    }
+    #endregion
     public class CD_Usuarios
     {
         CD_Conexion conexion = new CD_Conexion();
@@ -57,7 +66,7 @@ namespace CapaDatos
 
         #endregion
 
-        # region Metodos
+        #region Metodos
         public void RegistrarUsuarios()
         {
             string sSql = "INSERT INTO Datos (Nombre, Apellido, Correo, Contraseña, ConfirmContraseña, Rol) " +
@@ -152,6 +161,44 @@ namespace CapaDatos
                 conexion.CerrarConexion();
 
                 return rol;
+            }
+        }
+
+        public Usuario ObtenerUsuarioPorCorreo(string correo)
+        {
+            try
+            {
+                string sSql = "SELECT Nombre, Rol FROM Datos WHERE Correo = @Correo";
+
+                using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                {
+                    cmd.Parameters.AddWithValue("@Correo", correo);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Usuario usuario = new Usuario
+                            {
+                                Nombre = reader["Nombre"].ToString(),
+                                Rol = reader["Rol"].ToString()
+                            };
+                            return usuario;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuario no encontrado en la base de datos.");
+                        }
+                    }
+                    conexion.CerrarConexion();
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener el usuario: " + ex.Message);
+                conexion.CerrarConexion();
+                return null;
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using CapaNegocio;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -24,7 +25,7 @@ namespace Presentacion
                     return;
                 }
 
-                if(txtCorreoR.Text == "santi@gmail.com")
+                if (txtCorreoR.Text == "santi@gmail.com")
                 {
                     Usuario.Rol = "admin";
                 }
@@ -53,6 +54,24 @@ namespace Presentacion
             Usuario.Correo = txtCorreoR.Text;
             Usuario.Contrasena = txtContraseña.Text;
             Usuario.ConfirmContrasena = txtContraseñaConfirm.Text;
+        }
+
+        private void txtCorreoR_TextChanged(object sender, EventArgs e)
+        {
+            ValidarCorreo val = new ValidarCorreo();
+            val.Correo = txtCorreoR.Text;
+            if (val.Valid() != true)
+            {
+                txtCorreoR.ForeColor = Color.Red;
+                lblErrorCorreo.Visible = true;
+                lblErrorCorreo.Text = "El mail no es valido";
+                lblErrorCorreo.ForeColor = Color.Red;
+            }
+            else
+            {
+                txtCorreoR.ForeColor = Color.Black;
+                lblErrorCorreo.Visible = false;
+            }
         }
     }
 }

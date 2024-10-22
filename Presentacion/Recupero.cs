@@ -18,13 +18,20 @@ namespace Presentacion
         {
             string correo = txtCorreoR.Text;
 
-            string codigo = usuarios.GenerarCodigoRecuperacion(correo);
+            if (String.IsNullOrEmpty(correo))
+            {
+                MessageBox.Show("Debe ingresar el correo");
+            }else
+            {
+                string codigo = usuarios.GenerarCodigoRecuperacion(correo);
 
-            MessageBox.Show("El codigo es: " + codigo);
-            txtCodigoI.Enabled = true;
-            txtNuevaContrasena.Enabled = true;
-            txtConfirmNuevaContrasena.Enabled = true;
-            btnCambiarPass.Enabled = true;
+                MessageBox.Show("El codigo es: " + codigo);
+                txtCodigoI.Enabled = true;
+                txtNuevaContrasena.Enabled = true;
+                txtConfirmNuevaContrasena.Enabled = true;
+                btnCambiarPass.Enabled = true;
+            }
+            
         }
 
         private void btnCambiarPass_Click(object sender, EventArgs e)

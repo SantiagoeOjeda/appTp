@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -39,11 +40,12 @@
             this.txtCorreoR = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtContraseñaConfirm = new System.Windows.Forms.TextBox();
+            this.lblErrorCorreo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRegistrarse
             // 
-            this.btnRegistrarse.Location = new System.Drawing.Point(111, 276);
+            this.btnRegistrarse.Location = new System.Drawing.Point(104, 277);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrarse.TabIndex = 0;
@@ -54,7 +56,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(129, 27);
+            this.lblNombre.Location = new System.Drawing.Point(119, 16);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 1;
@@ -63,7 +65,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(129, 71);
+            this.lblApellido.Location = new System.Drawing.Point(119, 70);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 2;
@@ -72,7 +74,7 @@
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(129, 118);
+            this.lblCorreo.Location = new System.Drawing.Point(122, 123);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(38, 13);
             this.lblCorreo.TabIndex = 3;
@@ -81,7 +83,7 @@
             // lblContraeña
             // 
             this.lblContraeña.AutoSize = true;
-            this.lblContraeña.Location = new System.Drawing.Point(125, 161);
+            this.lblContraeña.Location = new System.Drawing.Point(111, 181);
             this.lblContraeña.Name = "lblContraeña";
             this.lblContraeña.Size = new System.Drawing.Size(61, 13);
             this.lblContraeña.TabIndex = 4;
@@ -90,7 +92,7 @@
             // lblConfirmPass
             // 
             this.lblConfirmPass.AutoSize = true;
-            this.lblConfirmPass.Location = new System.Drawing.Point(98, 210);
+            this.lblConfirmPass.Location = new System.Drawing.Point(87, 235);
             this.lblConfirmPass.Name = "lblConfirmPass";
             this.lblConfirmPass.Size = new System.Drawing.Size(108, 13);
             this.lblConfirmPass.TabIndex = 5;
@@ -98,45 +100,57 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(101, 43);
+            this.txtNombre.Location = new System.Drawing.Point(68, 32);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(146, 20);
             this.txtNombre.TabIndex = 6;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(101, 87);
+            this.txtApellido.Location = new System.Drawing.Point(68, 86);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.Size = new System.Drawing.Size(146, 20);
             this.txtApellido.TabIndex = 7;
             // 
             // txtCorreoR
             // 
-            this.txtCorreoR.Location = new System.Drawing.Point(101, 134);
+            this.txtCorreoR.Location = new System.Drawing.Point(68, 139);
             this.txtCorreoR.Name = "txtCorreoR";
-            this.txtCorreoR.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreoR.Size = new System.Drawing.Size(146, 20);
             this.txtCorreoR.TabIndex = 8;
+            this.txtCorreoR.TextChanged += new System.EventHandler(this.txtCorreoR_TextChanged);
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(101, 177);
+            this.txtContraseña.Location = new System.Drawing.Point(68, 197);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(100, 20);
+            this.txtContraseña.Size = new System.Drawing.Size(146, 20);
             this.txtContraseña.TabIndex = 9;
             // 
             // txtContraseñaConfirm
             // 
-            this.txtContraseñaConfirm.Location = new System.Drawing.Point(101, 226);
+            this.txtContraseñaConfirm.Location = new System.Drawing.Point(68, 251);
             this.txtContraseñaConfirm.Name = "txtContraseñaConfirm";
-            this.txtContraseñaConfirm.Size = new System.Drawing.Size(100, 20);
+            this.txtContraseñaConfirm.Size = new System.Drawing.Size(146, 20);
             this.txtContraseñaConfirm.TabIndex = 10;
+            // 
+            // lblErrorCorreo
+            // 
+            this.lblErrorCorreo.AutoSize = true;
+            this.lblErrorCorreo.Location = new System.Drawing.Point(87, 162);
+            this.lblErrorCorreo.Name = "lblErrorCorreo";
+            this.lblErrorCorreo.Size = new System.Drawing.Size(35, 13);
+            this.lblErrorCorreo.TabIndex = 11;
+            this.lblErrorCorreo.Text = "label1";
+            this.lblErrorCorreo.Visible = false;
             // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(308, 341);
+            this.ClientSize = new System.Drawing.Size(276, 341);
+            this.Controls.Add(this.lblErrorCorreo);
             this.Controls.Add(this.txtContraseñaConfirm);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtCorreoR);
@@ -148,6 +162,7 @@
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnRegistrarse);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registro";
             this.Text = "Registro";
             this.ResumeLayout(false);
@@ -168,5 +183,6 @@
         private System.Windows.Forms.TextBox txtCorreoR;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtContraseñaConfirm;
+        private System.Windows.Forms.Label lblErrorCorreo;
     }
 }

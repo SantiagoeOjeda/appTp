@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnIngresar = new System.Windows.Forms.Button();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
@@ -39,7 +40,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(118, 231);
+            this.btnIngresar.Location = new System.Drawing.Point(117, 200);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
             this.btnIngresar.TabIndex = 0;
@@ -50,7 +51,7 @@
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(142, 100);
+            this.lblCorreo.Location = new System.Drawing.Point(135, 69);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(38, 13);
             this.lblCorreo.TabIndex = 1;
@@ -59,7 +60,7 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(132, 152);
+            this.lblContraseña.Location = new System.Drawing.Point(124, 121);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(61, 13);
             this.lblContraseña.TabIndex = 2;
@@ -67,14 +68,14 @@
             // 
             // txtCorreoL
             // 
-            this.txtCorreoL.Location = new System.Drawing.Point(103, 116);
+            this.txtCorreoL.Location = new System.Drawing.Point(97, 85);
             this.txtCorreoL.Name = "txtCorreoL";
             this.txtCorreoL.Size = new System.Drawing.Size(115, 20);
             this.txtCorreoL.TabIndex = 3;
             // 
             // txtContraseñaL
             // 
-            this.txtContraseñaL.Location = new System.Drawing.Point(102, 168);
+            this.txtContraseñaL.Location = new System.Drawing.Point(97, 137);
             this.txtContraseñaL.Name = "txtContraseñaL";
             this.txtContraseñaL.Size = new System.Drawing.Size(115, 20);
             this.txtContraseñaL.TabIndex = 4;
@@ -82,7 +83,7 @@
             // lnkRecupero
             // 
             this.lnkRecupero.AutoSize = true;
-            this.lnkRecupero.Location = new System.Drawing.Point(100, 202);
+            this.lnkRecupero.Location = new System.Drawing.Point(95, 171);
             this.lnkRecupero.Name = "lnkRecupero";
             this.lnkRecupero.Size = new System.Drawing.Size(119, 13);
             this.lnkRecupero.TabIndex = 5;
@@ -92,7 +93,7 @@
             // 
             // btnRegistroL
             // 
-            this.btnRegistroL.Location = new System.Drawing.Point(118, 273);
+            this.btnRegistroL.Location = new System.Drawing.Point(117, 242);
             this.btnRegistroL.Name = "btnRegistroL";
             this.btnRegistroL.Size = new System.Drawing.Size(75, 23);
             this.btnRegistroL.TabIndex = 6;
@@ -113,6 +114,7 @@
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.btnIngresar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);

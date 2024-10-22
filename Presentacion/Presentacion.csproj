@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ValidarCorreo.cs" />
     <Compile Include="HomeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +96,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Recupero.resx">
       <DependentUpon>Recupero.cs</DependentUpon>
@@ -116,10 +118,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{B048A49A-58F9-4457-BF9E-18B254209A7B}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
       <Project>{a10c5226-e72b-4e33-871b-379f62f2b595}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixArg_Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

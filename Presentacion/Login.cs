@@ -1,5 +1,7 @@
 ﻿using CapaNegocio;
 using System;
+using System.Drawing;
+using System.Security.Principal;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -31,7 +33,7 @@ namespace Presentacion
                 }
                 else if(rol == "user")
                 {
-                    HomeUser homeUser = new HomeUser(); 
+                    HomeUser homeUser = new HomeUser(correo); 
                     homeUser.Show();    
                 }
                 this.Hide();
@@ -55,5 +57,7 @@ namespace Presentacion
             recupero.Show();
             this.Hide();
         }
+
+       
     }
 }

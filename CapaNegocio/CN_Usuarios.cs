@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using System;
+using static CapaDatos.CD_Usuarios;
 namespace CapaNegocio
 {
     public class CN_Usuarios
@@ -90,6 +91,11 @@ namespace CapaNegocio
         public string ObtenerRol(string correo)
         {
             return usuario.ObtenerRol(correo);
+        }
+
+        public Usuario ObtenerUsuarioPorCorreo(string correo)
+        {
+            return usuario.ObtenerUsuarioPorCorreo(correo);
         }
         private void PasarDatos()
         {

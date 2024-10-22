@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeAdmin));
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.chbEdicion = new System.Windows.Forms.CheckBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(490, 150);
             this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             this.dgvUsuarios.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
             // 
             // chbEdicion
@@ -208,6 +210,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.chbEdicion);
             this.Controls.Add(this.dgvUsuarios);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomeAdmin";
             this.Text = "Panel De Administrador";
             this.Load += new System.EventHandler(this.HomeAdmin_Load);
