@@ -14,6 +14,7 @@ namespace Presentacion
 
         private void HomeAdmin_Load(object sender, EventArgs e)
         {
+            dgvUsuarios.AllowUserToAddRows = false;
             LlenarDataGriedView();
         }
 
@@ -98,11 +99,6 @@ namespace Presentacion
 
                 LlenarDataGriedView();
             }
-        }
-
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
