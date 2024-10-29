@@ -19,19 +19,22 @@ namespace Presentacion
         {
             try
             {
+                if (String.IsNullOrEmpty(txtApellido.Text) && String.IsNullOrEmpty(txtCorreoR.Text) && String.IsNullOrEmpty(txtContraseña.Text) && String.IsNullOrEmpty(txtContraseñaConfirm.Text) && String.IsNullOrEmpty(txtNombre.Text)) 
+                {
+                    MessageBox.Show("Los campos estan vacios");
+                }
                 if (txtContraseña.Text != txtContraseñaConfirm.Text)
                 {
                     MessageBox.Show("Las contraseñas no coinciden.");
+                    PasarDatos();
+                    Usuario.RegistrarUsuarios();
+
+                    MessageBox.Show("Usuario registrado correctamente");
+                    Login login = new Login();
+                    login.Show();
+                    this.Close();
                     return;
-                }
-
-                PasarDatos();
-                Usuario.RegistrarUsuarios();
-
-                MessageBox.Show("Usuario registrado correctamente");
-                Login login = new Login();
-                login.Show();
-                this.Close();
+                }                                
             }
             catch (Exception ex)
             {

@@ -48,5 +48,10 @@ namespace Presentacion
                 MessageBox.Show("Usuario no encontrado.");
             }
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

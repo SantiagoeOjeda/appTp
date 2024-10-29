@@ -84,6 +84,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(109, 20);
             this.txtName.TabIndex = 4;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtRol
             // 

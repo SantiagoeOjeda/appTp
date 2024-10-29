@@ -53,6 +53,7 @@ namespace Presentacion
             txtCorreoA.Enabled = habilitar;   
             txtContraseñaA.Enabled = habilitar; 
             txtApellidoA.Enabled = habilitar;
+            btnActualizar.Enabled = habilitar;
             cmbRol.Enabled = habilitar;
         }
 

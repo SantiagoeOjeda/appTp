@@ -148,6 +148,7 @@
             // 
             // btnActualizar
             // 
+            this.btnActualizar.Enabled = false;
             this.btnActualizar.Location = new System.Drawing.Point(380, 99);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(106, 23);

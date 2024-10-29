@@ -130,5 +130,11 @@
   <ItemGroup>
     <None Include="Resources\FixArg_Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeslash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-icon-md.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

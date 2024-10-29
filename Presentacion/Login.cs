@@ -58,6 +58,18 @@ namespace Presentacion
             this.Hide();
         }
 
-       
+        private void pcboxMostrar_Click_1(object sender, EventArgs e)
+        {
+            pcboxOcultar.BringToFront();
+
+            txtContraseñaL.PasswordChar = '\0';
+        }
+
+        private void pcboxOcultar_Click(object sender, EventArgs e)
+        {
+            pcboxMostrar.BringToFront();
+
+            txtContraseñaL.PasswordChar = '*';
+        }
     }
 }

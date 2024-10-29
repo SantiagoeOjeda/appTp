@@ -36,6 +36,10 @@
             this.txtContraseñaL = new System.Windows.Forms.TextBox();
             this.lnkRecupero = new System.Windows.Forms.LinkLabel();
             this.btnRegistroL = new System.Windows.Forms.Button();
+            this.pcboxMostrar = new System.Windows.Forms.PictureBox();
+            this.pcboxOcultar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcboxMostrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcboxOcultar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIngresar
@@ -101,12 +105,36 @@
             this.btnRegistroL.UseVisualStyleBackColor = true;
             this.btnRegistroL.Click += new System.EventHandler(this.btnRegistroL_Click);
             // 
+            // pcboxMostrar
+            // 
+            this.pcboxMostrar.Image = global::Presentacion.Properties.Resources.eye_icon_md;
+            this.pcboxMostrar.Location = new System.Drawing.Point(208, 137);
+            this.pcboxMostrar.Name = "pcboxMostrar";
+            this.pcboxMostrar.Size = new System.Drawing.Size(21, 20);
+            this.pcboxMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcboxMostrar.TabIndex = 8;
+            this.pcboxMostrar.TabStop = false;
+            this.pcboxMostrar.Click += new System.EventHandler(this.pcboxMostrar_Click_1);
+            // 
+            // pcboxOcultar
+            // 
+            this.pcboxOcultar.Image = global::Presentacion.Properties.Resources.eyeslash;
+            this.pcboxOcultar.Location = new System.Drawing.Point(208, 137);
+            this.pcboxOcultar.Name = "pcboxOcultar";
+            this.pcboxOcultar.Size = new System.Drawing.Size(21, 20);
+            this.pcboxOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcboxOcultar.TabIndex = 7;
+            this.pcboxOcultar.TabStop = false;
+            this.pcboxOcultar.Click += new System.EventHandler(this.pcboxOcultar_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(316, 362);
+            this.Controls.Add(this.pcboxMostrar);
+            this.Controls.Add(this.pcboxOcultar);
             this.Controls.Add(this.btnRegistroL);
             this.Controls.Add(this.lnkRecupero);
             this.Controls.Add(this.txtContraseñaL);
@@ -117,6 +145,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pcboxMostrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcboxOcultar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,6 +161,8 @@
         private System.Windows.Forms.TextBox txtContraseñaL;
         private System.Windows.Forms.LinkLabel lnkRecupero;
         private System.Windows.Forms.Button btnRegistroL;
+        private System.Windows.Forms.PictureBox pcboxOcultar;
+        private System.Windows.Forms.PictureBox pcboxMostrar;
     }
 }
 
