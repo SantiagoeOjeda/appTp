@@ -13,9 +13,8 @@ namespace CapaDatos
         public string Rol { get; set; }
     }
     #endregion
-    public class CD_Usuarios
+    public class CD_Usuarios : CD_Conexion
     {
-        CD_Conexion conexion = new CD_Conexion();
 
         #region atributos
         private int idUsuarios;
@@ -73,7 +72,7 @@ namespace CapaDatos
                 string sSql = "INSERT INTO Datos (Nombre, Apellido, Correo, Contraseña, ConfirmContraseña, Rol) " +
                               "VALUES (@Nombre, @Apellido, @Correo, @Contrasena, @ConfirmContrasena, @Rol)";
 
-                using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                using (OleDbCommand cmd = new OleDbCommand(sSql, AbrirConexion()))
                 {
                     cmd.Parameters.AddWithValue("@Nombre", nombre);
                     cmd.Parameters.AddWithValue("@Apellido", apellido);
@@ -91,7 +90,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+               CerrarConexion();
             }
         }
 
@@ -101,7 +100,7 @@ namespace CapaDatos
             {
                 string sSql = "SELECT COUNT(*) FROM Datos WHERE Correo = @Correo AND Contraseña = @Contrasena";
 
-                using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                using (OleDbCommand cmd = new OleDbCommand(sSql, AbrirConexion()))
                 {
                     cmd.Parameters.AddWithValue("@Correo", correo);
                     cmd.Parameters.AddWithValue("@Contrasena", contrasena);
@@ -117,7 +116,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+                CerrarConexion();
             }
         }
 
@@ -127,7 +126,7 @@ namespace CapaDatos
             {
                 string sSql = "UPDATE Datos SET CodigoRecuperacion = @Codigo WHERE Correo = @Correo";
 
-                using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                using (OleDbCommand cmd = new OleDbCommand(sSql, AbrirConexion()))
                 {
                     cmd.Parameters.AddWithValue("@Codigo", codigo);
                     cmd.Parameters.AddWithValue("@Correo", correo);
@@ -141,7 +140,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+                CerrarConexion();
             }
         }
 
@@ -151,7 +150,7 @@ namespace CapaDatos
             {
                 string sSql = "SELECT COUNT(*) FROM Datos WHERE Correo = @Correo AND CodigoRecuperacion = @Codigo";
 
-                using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                using (OleDbCommand cmd = new OleDbCommand(sSql, AbrirConexion()))
                 {
                     cmd.Parameters.AddWithValue("@Correo", correo);
                     cmd.Parameters.AddWithValue("@Codigo", codigo);
@@ -179,7 +178,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+                CerrarConexion();
             }
         }
 
@@ -189,7 +188,7 @@ namespace CapaDatos
             {
                 string sSql = "SELECT Rol FROM Datos WHERE Correo = @Correo";
 
-                using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                using (OleDbCommand cmd = new OleDbCommand(sSql, AbrirConexion()))
                 {
                     cmd.Parameters.AddWithValue("@Correo", correo);
 
@@ -204,7 +203,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+                CerrarConexion();
             }
         }
 
@@ -214,7 +213,7 @@ namespace CapaDatos
             {
                 string sSql = "SELECT Nombre, Rol FROM Datos WHERE Correo = @Correo";
 
-                using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                using (OleDbCommand cmd = new OleDbCommand(sSql, AbrirConexion()))
                 {
                     cmd.Parameters.AddWithValue("@Correo", correo);
 
@@ -244,7 +243,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+                CerrarConexion();
             }
         }
 
@@ -253,7 +252,7 @@ namespace CapaDatos
             try
             {
                 string sSql = "SELECT ID, Nombre, Apellido, Correo, Contraseña, Rol FROM Datos ORDER BY ID ASC";
-                OleDbDataAdapter adapter = new OleDbDataAdapter(sSql, conexion.AbrirConexion());
+                OleDbDataAdapter adapter = new OleDbDataAdapter(sSql, AbrirConexion());
 
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -267,7 +266,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+                CerrarConexion();
             }
         }
 
@@ -277,7 +276,7 @@ namespace CapaDatos
             {
                 string sSql = "DELETE FROM Datos WHERE ID = @ID";
 
-                using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                using (OleDbCommand cmd = new OleDbCommand(sSql, AbrirConexion()))
                 {
                     cmd.Parameters.AddWithValue("@ID", idUsuario);
                     cmd.ExecuteNonQuery();
@@ -289,7 +288,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+                CerrarConexion();
             }
         }
 
@@ -299,7 +298,7 @@ namespace CapaDatos
             {
                 string sSql = "UPDATE Datos SET Nombre = @Nombre, Apellido = @Apellido, Correo = @Correo, Contraseña = @Contrasena, ConfirmContraseña = @Contrasena, Rol = @Rol WHERE ID = @ID";
 
-                using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                using (OleDbCommand cmd = new OleDbCommand(sSql, AbrirConexion()))
                 {
                     cmd.Parameters.AddWithValue("@Nombre", nombre);
                     cmd.Parameters.AddWithValue("@Apellido", apellido);
@@ -317,7 +316,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+                CerrarConexion();
             }
         }
 
@@ -328,7 +327,7 @@ namespace CapaDatos
             try
             {
                     string sSql = "SELECT COUNT(*) FROM Datos WHERE Correo = @correo";
-                using (OleDbCommand comando = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                using (OleDbCommand comando = new OleDbCommand(sSql, AbrirConexion()))
                 {
                     comando.Parameters.AddWithValue("@correo", correo);
 
@@ -343,7 +342,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+                CerrarConexion();
             }
 
             return existe;
@@ -355,7 +354,7 @@ namespace CapaDatos
                 string sSql = "INSERT INTO Datos (Nombre, Apellido, Correo, Contraseña, ConfirmContraseña, Rol) " +
                               "VALUES (@Nombre, @Apellido, @Correo, @Contrasena, @ConfirmContrasena, @Rol)";
 
-                using (OleDbCommand cmd = new OleDbCommand(sSql, conexion.AbrirConexion()))
+                using (OleDbCommand cmd = new OleDbCommand(sSql, AbrirConexion()))
                 {
                     cmd.Parameters.AddWithValue("@Nombre", nombre);
                     cmd.Parameters.AddWithValue("@Apellido", apellido);
@@ -373,7 +372,7 @@ namespace CapaDatos
             }
             finally
             {
-                conexion.CerrarConexion();
+                CerrarConexion();
             }
         }
 
