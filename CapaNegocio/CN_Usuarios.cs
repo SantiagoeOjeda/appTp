@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using System;
+using System.Data;
 using static CapaDatos.CD_Usuarios;
 namespace CapaNegocio
 {
@@ -96,6 +97,31 @@ namespace CapaNegocio
         public Usuario ObtenerUsuarioPorCorreo(string correo)
         {
             return usuario.ObtenerUsuarioPorCorreo(correo);
+        }
+
+        public DataTable ObtenerUsuarios()
+        {
+            return usuario.ObtenerUsuarios();
+        }
+
+        public void EliminarUsuario(string idUsuario)
+        {
+            usuario.ElimiinarUsuario(idUsuario);
+        }
+
+        public void ActualizarUsuario(int idUsuario, string nombre, string apellido, string correo, string contrasena, string rol)
+        {
+            usuario.AcutualizarUsuario(idUsuario, nombre, apellido, correo, contrasena, rol);
+        }
+        public void CargarUsuarios()
+        {
+            PasarDatos();
+            usuario.CargarUsuarios();   
+        }
+
+        public bool ExisteCorreo(string correo) 
+        {
+            return usuario.ExisteCorreo(correo);
         }
         private void PasarDatos()
         {

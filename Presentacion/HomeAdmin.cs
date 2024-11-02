@@ -6,10 +6,12 @@ namespace Presentacion
 {
     public partial class HomeAdmin : Form
     {
-        CN_Admin admin = new CN_Admin();
+        CN_Usuarios usuarios = new CN_Usuarios();
         public HomeAdmin()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void HomeAdmin_Load(object sender, EventArgs e)
@@ -20,23 +22,29 @@ namespace Presentacion
 
         private void LlenarDataGriedView()
         {
-            dgvUsuarios.DataSource = admin.ObtenerUsuarios();
+            dgvUsuarios.DataSource = usuarios.ObtenerUsuarios();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(dgvUsuarios.SelectedRows.Count > 0)
+            if (dgvUsuarios.SelectedRows.Count > 0)
             {
-                string idUsuario = dgvUsuarios.SelectedRows[0].Cells["ID"].Value.ToString();
-
-                DialogResult result = MessageBox.Show("¿Estas seguro de eliminar este usuario?", "Confirmar eliminacion", MessageBoxButtons.YesNo);
-
-                if(result == DialogResult.Yes)
+                try
                 {
+                    string idUsuario = dgvUsuarios.SelectedRows[0].Cells["ID"].Value.ToString();
 
-                    admin.EliminarUsuario(idUsuario);
+                    DialogResult result = MessageBox.Show("¿Estás seguro de eliminar este usuario?", "Confirmar eliminación", MessageBoxButtons.YesNo);
 
-                    LlenarDataGriedView();
+                    if (result == DialogResult.Yes)
+                    {
+                        usuarios.EliminarUsuario(idUsuario);
+
+                        LlenarDataGriedView();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al intentar eliminar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -77,6 +85,7 @@ namespace Presentacion
                 cmbRol.Items.Clear();
                 cmbRol.Items.Add("admin");
                 cmbRol.Items.Add("user");
+                cmbRol.DropDownStyle = ComboBoxStyle.DropDownList;
                 string rolActual = row.Cells["Rol"].Value.ToString();
                 cmbRol.SelectedItem = rolActual;
             }
@@ -94,12 +103,19 @@ namespace Presentacion
                 string contrasena = txtContraseñaA.Text;
                 string rol = cmbRol.SelectedItem.ToString();    
 
-                admin.ActualizarUsuario(idUsuario, nombre, apellido, correo, contrasena, rol);
+                usuarios.ActualizarUsuario(idUsuario, nombre, apellido, correo, contrasena, rol);
 
                 MessageBox.Show("Actualizado");
 
                 LlenarDataGriedView();
             }
+        }
+
+        private void btnCrearUsuario_Click(object sender, EventArgs e)
+        {
+           CrearUsuario user = new CrearUsuario();
+            user.Show();
+            this.Close();
         }
     }
 }

@@ -21,6 +21,8 @@ namespace Presentacion
         {
             InitializeComponent();
             this.correoLogin = correoLogin;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
         private void imgPrincipal_Paint(object sender, PaintEventArgs e)
         {

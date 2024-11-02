@@ -12,35 +12,60 @@ namespace Presentacion
         public Login()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             txtContraseñaL.PasswordChar = '*';
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string correo = txtCorreoL.Text;
+            string correoI = txtCorreoL.Text;
             string contrasena = txtContraseñaL.Text;
-
-            if (usuarios.Login(correo, contrasena))
+            if (String.IsNullOrEmpty(correoI) || String.IsNullOrEmpty(contrasena))
             {
-                MessageBox.Show("Inicio de sesión exitoso");
-
-                string rol = usuarios.ObtenerRol(correo);
-
-                if(rol == "admin")
-                {
-                    HomeAdmin homeAdmin = new HomeAdmin();
-                    homeAdmin.Show();
-                }
-                else if(rol == "user")
-                {
-                    HomeUser homeUser = new HomeUser(correo); 
-                    homeUser.Show();    
-                }
-                this.Hide();
+                MessageBox.Show("Los campos están vacíos");
             }
             else
             {
-                MessageBox.Show("Datos erroneos");
+                try
+                {
+                    if (usuarios.Login(correoI, contrasena))
+                    {
+                        MessageBox.Show("Inicio de sesión exitoso");
+
+                        string rol;
+                        try
+                        {
+                            rol = usuarios.ObtenerRol(correoI);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al obtener el rol del usuario: " + ex.Message);
+                            return; 
+                        }
+
+                        if (rol == "admin")
+                        {
+                            HomeAdmin homeAdmin = new HomeAdmin();
+                            homeAdmin.Show();
+                        }
+                        else if (rol == "user")
+                        {
+                            HomeUser homeUser = new HomeUser(correoI);
+                            homeUser.Show();
+                        }
+                        this.Hide();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Datos erróneos");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar iniciar sesión: " + ex.Message);
+                }
             }
         }
 

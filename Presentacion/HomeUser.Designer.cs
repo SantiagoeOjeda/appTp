@@ -29,58 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeUser));
-            this.imgPrincipal = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtRol = new System.Windows.Forms.TextBox();
+            this.imgPrincipal = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgPrincipal)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imgPrincipal
-            // 
-            this.imgPrincipal.Image = global::Presentacion.Properties.Resources.FixArg_Logo;
-            this.imgPrincipal.Location = new System.Drawing.Point(31, 24);
-            this.imgPrincipal.Name = "imgPrincipal";
-            this.imgPrincipal.Size = new System.Drawing.Size(100, 73);
-            this.imgPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgPrincipal.TabIndex = 0;
-            this.imgPrincipal.TabStop = false;
-            this.imgPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.imgPrincipal_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(172, 51);
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(114, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 34);
+            this.label1.Size = new System.Drawing.Size(285, 34);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Bienvenido a Fix Arg";
+            this.label1.Text = "Bienvenido a FIXARG";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(151, 159);
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblNombre.Location = new System.Drawing.Point(175, 156);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(57, 13);
             this.lblNombre.TabIndex = 2;
-            this.lblNombre.Text = "Nombre";
+            this.lblNombre.Text = "NOMBRE:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(293, 159);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Location = new System.Drawing.Point(121, 196);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(111, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Nivel de Usuario";
+            this.label3.Text = "NIVEL DE USUARIO:";
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtName.Enabled = false;
-            this.txtName.Location = new System.Drawing.Point(120, 175);
+            this.txtName.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtName.Location = new System.Drawing.Point(238, 153);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(109, 20);
             this.txtName.TabIndex = 4;
@@ -88,17 +82,30 @@
             // 
             // txtRol
             // 
+            this.txtRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtRol.Enabled = false;
-            this.txtRol.Location = new System.Drawing.Point(280, 175);
+            this.txtRol.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtRol.Location = new System.Drawing.Point(237, 193);
             this.txtRol.Name = "txtRol";
             this.txtRol.Size = new System.Drawing.Size(110, 20);
             this.txtRol.TabIndex = 5;
+            // 
+            // imgPrincipal
+            // 
+            this.imgPrincipal.Image = global::Presentacion.Properties.Resources.FixPaginaPrincipal;
+            this.imgPrincipal.Location = new System.Drawing.Point(202, 12);
+            this.imgPrincipal.Name = "imgPrincipal";
+            this.imgPrincipal.Size = new System.Drawing.Size(109, 82);
+            this.imgPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgPrincipal.TabIndex = 0;
+            this.imgPrincipal.TabStop = false;
+            this.imgPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.imgPrincipal_Paint);
             // 
             // HomeUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SlateGray;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(513, 297);
             this.Controls.Add(this.txtRol);
             this.Controls.Add(this.txtName);
@@ -108,6 +115,7 @@
             this.Controls.Add(this.imgPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomeUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.HomeUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgPrincipal)).EndInit();

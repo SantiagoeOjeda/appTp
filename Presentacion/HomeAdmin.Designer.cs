@@ -44,6 +44,7 @@
             this.txtApellidoA = new System.Windows.Forms.TextBox();
             this.txtCorreoA = new System.Windows.Forms.TextBox();
             this.txtContraseñaA = new System.Windows.Forms.TextBox();
+            this.btnCrearUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,29 +64,32 @@
             // 
             // chbEdicion
             // 
-            this.chbEdicion.AutoSize = true;
+            this.chbEdicion.BackColor = System.Drawing.Color.Black;
+            this.chbEdicion.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.chbEdicion.Location = new System.Drawing.Point(17, 309);
             this.chbEdicion.Name = "chbEdicion";
             this.chbEdicion.Size = new System.Drawing.Size(102, 17);
             this.chbEdicion.TabIndex = 1;
             this.chbEdicion.Text = "Habilitar Edicion";
-            this.chbEdicion.UseVisualStyleBackColor = true;
+            this.chbEdicion.UseVisualStyleBackColor = false;
             this.chbEdicion.CheckedChanged += new System.EventHandler(this.chbEdicion_CheckedChanged);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEliminar.Location = new System.Drawing.Point(396, 309);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(106, 23);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblUsuarios
             // 
             this.lblUsuarios.AutoSize = true;
             this.lblUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarios.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblUsuarios.Location = new System.Drawing.Point(12, 9);
             this.lblUsuarios.Name = "lblUsuarios";
             this.lblUsuarios.Size = new System.Drawing.Size(56, 13);
@@ -94,7 +98,9 @@
             // 
             // cmbRol
             // 
+            this.cmbRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.cmbRol.Enabled = false;
+            this.cmbRol.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cmbRol.FormattingEnabled = true;
             this.cmbRol.Location = new System.Drawing.Point(380, 56);
             this.cmbRol.Name = "cmbRol";
@@ -104,6 +110,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblNombre.Location = new System.Drawing.Point(55, 41);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
@@ -113,6 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label2.Location = new System.Drawing.Point(233, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
@@ -122,6 +130,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label3.Location = new System.Drawing.Point(236, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
@@ -131,6 +140,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Location = new System.Drawing.Point(47, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
@@ -140,6 +150,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label5.Location = new System.Drawing.Point(422, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 13);
@@ -148,18 +159,21 @@
             // 
             // btnActualizar
             // 
+            this.btnActualizar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnActualizar.Enabled = false;
             this.btnActualizar.Location = new System.Drawing.Point(380, 99);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(106, 23);
             this.btnActualizar.TabIndex = 14;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // txtNombreA
             // 
+            this.txtNombreA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtNombreA.Enabled = false;
+            this.txtNombreA.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtNombreA.Location = new System.Drawing.Point(29, 57);
             this.txtNombreA.Name = "txtNombreA";
             this.txtNombreA.Size = new System.Drawing.Size(100, 20);
@@ -167,7 +181,9 @@
             // 
             // txtApellidoA
             // 
+            this.txtApellidoA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtApellidoA.Enabled = false;
+            this.txtApellidoA.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtApellidoA.Location = new System.Drawing.Point(202, 57);
             this.txtApellidoA.Name = "txtApellidoA";
             this.txtApellidoA.Size = new System.Drawing.Size(100, 20);
@@ -175,7 +191,9 @@
             // 
             // txtCorreoA
             // 
+            this.txtCorreoA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtCorreoA.Enabled = false;
+            this.txtCorreoA.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtCorreoA.Location = new System.Drawing.Point(202, 99);
             this.txtCorreoA.Name = "txtCorreoA";
             this.txtCorreoA.Size = new System.Drawing.Size(100, 20);
@@ -183,18 +201,32 @@
             // 
             // txtContraseñaA
             // 
+            this.txtContraseñaA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtContraseñaA.Enabled = false;
+            this.txtContraseñaA.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtContraseñaA.Location = new System.Drawing.Point(29, 100);
             this.txtContraseñaA.Name = "txtContraseñaA";
             this.txtContraseñaA.Size = new System.Drawing.Size(100, 20);
             this.txtContraseñaA.TabIndex = 18;
             // 
+            // btnCrearUsuario
+            // 
+            this.btnCrearUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCrearUsuario.Location = new System.Drawing.Point(197, 309);
+            this.btnCrearUsuario.Name = "btnCrearUsuario";
+            this.btnCrearUsuario.Size = new System.Drawing.Size(105, 23);
+            this.btnCrearUsuario.TabIndex = 19;
+            this.btnCrearUsuario.Text = "Crear Usuario";
+            this.btnCrearUsuario.UseVisualStyleBackColor = false;
+            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
+            // 
             // HomeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(514, 354);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(512, 360);
+            this.Controls.Add(this.btnCrearUsuario);
             this.Controls.Add(this.txtContraseñaA);
             this.Controls.Add(this.txtCorreoA);
             this.Controls.Add(this.txtApellidoA);
@@ -212,6 +244,7 @@
             this.Controls.Add(this.dgvUsuarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomeAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel De Administrador";
             this.Load += new System.EventHandler(this.HomeAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
@@ -237,5 +270,6 @@
         private System.Windows.Forms.TextBox txtApellidoA;
         private System.Windows.Forms.TextBox txtCorreoA;
         private System.Windows.Forms.TextBox txtContraseñaA;
+        private System.Windows.Forms.Button btnCrearUsuario;
     }
 }
